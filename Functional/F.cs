@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Unit = System.ValueTuple;
+
 namespace Functional
 {
     /// <summary>
@@ -7,6 +9,11 @@ namespace Functional
     /// </summary>
     public static class F
     {
+        /// <summary>
+        /// Convenience method that allows you to simply write "return Unit()" in functions that return Unit.
+        /// </summary>
+        public static Unit Unit() => default(Unit);
+
         /// <summary>
         /// Generic setup/teardown that performs the using ceremony.
         /// </summary>
