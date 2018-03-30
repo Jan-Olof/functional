@@ -7,9 +7,9 @@ namespace FunctionalTests
     public class AgeTests
     {
         [DataRow(10, "Age is 10")]
-        [DataRow(110, "Age is 110")]
+        [DataRow(119, "Age is 119")]
         [DataRow(-1, "Age is invalid")]
-        [DataRow(121, "Age is invalid")]
+        [DataRow(120, "Age is invalid")]
         [DataRow(10500, "Age is invalid")]
         [DataTestMethod]
         public void WhenMatchingAge_ThenCheckValue(int age, string expected)
@@ -25,9 +25,9 @@ namespace FunctionalTests
         }
 
         [DataRow(10, true)]
-        [DataRow(110, true)]
+        [DataRow(119, true)]
         [DataRow(-1, false)]
-        [DataRow(121, false)]
+        [DataRow(120, false)]
         [DataRow(10500, false)]
         [DataTestMethod]
         public void WhenMatchingAge_ThenIsAgeValid(int age, bool expected)

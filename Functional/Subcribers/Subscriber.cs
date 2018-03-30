@@ -1,6 +1,6 @@
 ﻿using LaYumba.Functional;
 
-namespace Functional
+namespace Functional.Subcribers
 {
     public class Subscriber
     {

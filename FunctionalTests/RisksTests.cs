@@ -1,25 +1,46 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Functional;
+using Functional.Risks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using static LaYumba.Functional.F;
 
 namespace FunctionalTests
 {
     [TestClass]
     public class RisksTests
     {
-        //[DataRow(+1, true)]
-        //[DataRow(0, true)]
-        //[DataRow(-1, false)]
-        //[DataTestMethod]
-        //public void WhenCalculatingRisk_ThenMappingToOption(int offset, bool expected)
-        //{
-        //    // Given
-        //    var subject = new Subject();
-        //    var cmd = new MakeTransfer { Date = _presentDate.AddDays(offset) };
+        [DataRow(-1)]
+        [DataRow(120)]
+        [DataRow(10500)]
+        [DataTestMethod]
+        public void WhenCalculatingRisk_ThenMappingToNone(int age)
+        {
+            // Given
+            var subject = new Subject { Age = Age.Of(age) };
 
-        //    // When
-        //    var result = subject.IsValid(cmd);
+            // When
+            var result = CalculateRisk.RiskOf(subject);
 
-        //    // Then
-        //    Assert.AreEqual(expected, result);
-        //}
+            // Then
+            Assert.AreEqual(None, result);
+        }
+
+        [DataRow(10, Risk.Low)]
+        [DataRow(119, Risk.Medium)]
+        [DataRow(0, Risk.Low)]
+        [DataRow(60, Risk.Medium)]
+        [DataRow(59, Risk.Low)]
+        [DataTestMethod]
+        public void WhenCalculatingRisk_ThenMappingToSome(int age, Risk risk)
+        {
+            // Given
+            var subject = new Subject { Age = Age.Of(age) };
+
+            // When
+            var result = CalculateRisk.RiskOf(subject);
+
+            // Then
+            Assert.AreEqual(Some(risk), result);
+        }
     }
 }

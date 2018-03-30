@@ -1,4 +1,4 @@
-﻿namespace Functional
+﻿namespace Functional.Subcribers
 {
     public static class SubcribeLogic
     {
