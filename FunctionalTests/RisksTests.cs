@@ -1,5 +1,5 @@
 ﻿using Functional;
-using Functional.Risks;
+using Functional.Map;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using static LaYumba.Functional.F;
@@ -31,7 +31,7 @@ namespace FunctionalTests
         [DataRow(60, Risk.Medium)]
         [DataRow(59, Risk.Low)]
         [DataTestMethod]
-        public void WhenCalculatingRisk_ThenMappingToSome(int age, Risk risk)
+        public void WhenCalculatingRisk_ThenMappingToSome(int age, Risk expected)
         {
             // Given
             var subject = new Subject { Age = Age.Of(age) };
@@ -40,7 +40,7 @@ namespace FunctionalTests
             var result = CalculateRisk.RiskOf(subject);
 
             // Then
-            Assert.AreEqual(Some(risk), result);
+            Assert.AreEqual(Some(expected), result);
         }
     }
 }

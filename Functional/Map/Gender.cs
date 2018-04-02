@@ -1,4 +1,4 @@
-﻿namespace Functional.Risks
+﻿namespace Functional.Map
 {
     public enum Gender
     {

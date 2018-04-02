@@ -1,6 +1,6 @@
 ﻿using LaYumba.Functional;
 
-namespace Functional.Risks
+namespace Functional.Map
 {
     public class Subject
     {
