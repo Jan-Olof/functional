@@ -1,5 +1,5 @@
 ﻿using Functional;
-using static Functional.Bind.Parse;
+using static Functional.Monad.Parse;
 using static System.Console;
 
 namespace CLI

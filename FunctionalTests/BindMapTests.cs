@@ -1,5 +1,5 @@
-﻿using Functional.Bind;
-using Functional.Map;
+﻿using Functional.Map;
+using Functional.Monad;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +44,23 @@ namespace FunctionalTests
             Assert.AreEqual(2, result[0].Count);
             Assert.AreEqual(0, result[1].Count);
             Assert.AreEqual(1, result[2].Count);
+        }
+
+        [TestMethod]
+        public void TestShouldReturnList()
+        {
+            // Given
+
+            // When
+            var result = Return.List("Andrej", "Karina", "Natasha");
+
+            // Then
+            var list = result.ToList();
+
+            Assert.AreEqual(3, list.Count());
+            Assert.AreEqual("Andrej", list[0]);
+            Assert.AreEqual("Karina", list[1]);
+            Assert.AreEqual("Natasha", list[2]);
         }
     }
 }

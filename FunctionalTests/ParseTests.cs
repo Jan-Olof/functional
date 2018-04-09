@@ -1,4 +1,4 @@
-﻿using Functional.Bind;
+﻿using Functional.Monad;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FunctionalTests

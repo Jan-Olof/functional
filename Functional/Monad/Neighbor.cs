@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Functional.Bind
+namespace Functional.Monad
 {
     public class Neighbor
     {

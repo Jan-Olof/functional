@@ -1,7 +1,7 @@
 ﻿using LaYumba.Functional;
 using System;
 
-namespace Functional.Bind
+namespace Functional.Monad
 {
     public static class Parse
     {
